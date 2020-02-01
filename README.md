@@ -1,7 +1,7 @@
 # jsitewp-open-graph
 Плагин реализует на сайте под управлением Wordpress разметку Facebook Open Graph.
 
-[https://jinsite.ru/raznoe/wp/item/1-facebook-open-graph](Сайт проекта)
+[Сайт проекта](https://jinsite.ru/raznoe/wp/item/1-facebook-open-graph)
 
 ### Версия 1.0
 
