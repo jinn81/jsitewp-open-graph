@@ -14,32 +14,30 @@
  * Domain Path: /languages
  *
  */
-if (!defined('ABSPATH')) {
-	die('Invalid request.');
+if ( ! defined ( 'ABSPATH' ) ) {
+	die ( 'Invalid request.' )  ;
 }
-define('JSITEWP_OPEN_GRAPH_URL', plugin_dir_url(__FILE__));
-function add_opengraph_doctype($output) {
+define ( 'JSITEWP_OPEN_GRAPH_URL', plugin_dir_url ( __FILE__ ) );
+function add_opengraph_doctype	( $output ) {
     return $output . ' xmlns:og="https://opengraphprotocol.org/schema/" xmlns:fb="https://www.facebook.com/2008/fbml"';
     }
-    add_filter('language_attributes', 'add_opengraph_doctype');
-function og_in_head() {
-     global $post;
-     if (!is_singular())
-     return;
-     echo '<meta property="og:title" content="' . get_the_title() . '"/>';
-     echo '<meta property="og:type" content="article"/>';
-     echo '<meta property="og:url" content="' . get_permalink() . '"/>';
-     echo '<meta property="og:site_name" content="' . bloginfo('name') . '"/>';
-     if(!has_post_thumbnail($post->ID)) {
-     $default_logo_image = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full'); 
-     echo '<meta property="og:image" content="' . $default_logo_image . '"/>';
+    add_filter ( 'language_attributes', 'add_opengraph_doctype' ) ;
+function jinsite_og_head () {
+    global $post;
+    if ( ! is_singular () )
+		return;
+		echo '<meta property="og:title" content="' . get_the_title () . '"/>';
+		echo '<meta property="og:type" content="article"/>';
+		echo '<meta property="og:url" content="' . get_permalink () . '"/>';
+		echo '<meta property="og:site_name" content="' . bloginfo ( 'name' ) . '"/>';
+		if ( ! has_post_thumbnail ( $post->ID ) ) {
+		$default_logo_image = wp_get_attachment_image_src ( get_theme_mod ( 'custom_logo' ) , 'full' ); 
+		echo '<meta property="og:image" content="' . $default_logo_image . '"/>';
+    } else {
+		$thumbnail_src = wp_get_attachment_image_src ( get_post_thumbnail_id ( $post->ID ) , 'medium' );
+		echo '<meta property="og:image" content="' . esc_attr ( $thumbnail_src [0] ) . '"/>';
     }
-    else{
-     $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID ), 'medium');
-     echo '<meta property="og:image" content="' . esc_attr($thumbnail_src[0]) . '"/>';
+    echo "";
     }
-     echo "
-     ";
-    }
-add_action('wp_head', 'og_in_head', 5);
+add_action ( 'wp_head', 'jinsite_og_head', 5 );
 ?>
