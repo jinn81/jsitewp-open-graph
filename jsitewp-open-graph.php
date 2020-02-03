@@ -20,8 +20,8 @@ if ( ! defined ( 'ABSPATH' ) ) {
 define ( 'JSITEWP_OPEN_GRAPH_URL', plugin_dir_url ( __FILE__ ) );
 function add_opengraph_doctype ( $output ) {
 	return $output . ' xmlns:og="https://opengraphprotocol.org/schema/" xmlns:fb="https://www.facebook.com/2008/fbml"';
-	}
-	add_filter ( 'language_attributes', 'add_opengraph_doctype' ) ;
+}
+add_filter ( 'language_attributes', 'add_opengraph_doctype' ) ;
 function jinsite_og_head () {
 	global $post;
 	if ( ! is_singular () )
