@@ -31,13 +31,13 @@ function jinsite_og_head () {
 		echo '<meta property="og:url" content="' . get_permalink () . '"/>';
 		echo '<meta property="og:site_name" content="' . bloginfo ( 'name' ) . '"/>';
 		if ( ! has_post_thumbnail ( $post->ID ) ) {
-		$default_logo_image = wp_get_attachment_image_src ( get_theme_mod ( 'custom_logo' ) , 'full' ); 
-		echo '<meta property="og:image" content="' . $default_logo_image . '"/>';
-	} else {
-		$thumbnail_src = wp_get_attachment_image_src ( get_post_thumbnail_id ( $post->ID ) , 'medium' );
-		echo '<meta property="og:image" content="' . esc_attr ( $thumbnail_src [0] ) . '"/>';
-	}
-	echo "";
+			$default_logo_image = wp_get_attachment_image_src ( get_theme_mod ( 'custom_logo' ) , 'full' ); 
+			echo '<meta property="og:image" content="' . $default_logo_image . '"/>';
+		} else {
+			$thumbnail_src = wp_get_attachment_image_src ( get_post_thumbnail_id ( $post->ID ) , 'medium' );
+			echo '<meta property="og:image" content="' . esc_attr ( $thumbnail_src [0] ) . '"/>';
+		}
+		echo "";
 	}
 add_action ( 'wp_head', 'jinsite_og_head', 5 );
 ?>
