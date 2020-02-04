@@ -3,7 +3,7 @@
  * Разметка Open Graph
  *
  * Plugin Name: Разметка Open Graph
- * Plugin URI:  https://jinsite.ru
+ * Plugin URI:  https://jinsite.ru/raznoe/wp/item/1-facebook-open-graph
  * Description: Плагин реализует на сайте разметку Facebook Open Graph. Добавляет возможность вставки нужного изображения для соцсетей. Если статья без изображений, в публикации статьи в соцсетях используется логотип сайта.
  * Version:     1.1
  * Author:      Евгений Поздняков
@@ -15,13 +15,13 @@
  *
  */
 if ( ! defined ( 'ABSPATH' ) ) {
-	die ( 'Invalid request.' )  ;
+	die ( 'Invalid request.' ) ;
 }
 define ( 'JSITEWP_OPEN_GRAPH_URL', plugin_dir_url ( __FILE__ ) );
 function add_opengraph_doctype ( $output ) {
 	return $output . ' xmlns:og="https://opengraphprotocol.org/schema/" xmlns:fb="https://www.facebook.com/2008/fbml"';
 }
-add_filter ( 'language_attributes', 'add_opengraph_doctype' ) ;
+add_filter ( 'language_attributes', 'add_opengraph_doctype' );
 function jinsite_og_head () {
 	global $post;
 	if ( ! is_singular () )

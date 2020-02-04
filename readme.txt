@@ -16,18 +16,15 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Installation ==
 
-1. Скачайте плагин с [сайта проекта](https://jinsite.ru/raznoe/wp/item/1-facebook-open-graph), либо с [GitHub](https://github.com/jinn81/jsitewp-open-graph/releases)
-1. Загрузите скачанный файл плагина на странице Плагины -> Добавить новый.
-1. Активируйте установленный плагин.
+1. Скачать плагин с [сайта проекта](https://jinsite.ru/raznoe/wp/item/1-facebook-open-graph), либо с [GitHub](https://github.com/jinn81/jsitewp-open-graph/releases)
+1. Загрузить скачанный файл плагина на странице Плагины -> Добавить новый.
+1. Активировать установленный плагин.
 
 == Changelog ==
 
-= Версия 1.2 =
-
-* Добавлен файл readme.txt (стандарт Wordpress).
-
 = Версия 1.1 =
 
+* Добавлен файл readme.txt (стандарт Wordpress).
 * Приведение кода к стандартам Wordpress.
 
 = Версия 1.0 =
