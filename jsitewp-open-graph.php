@@ -29,11 +29,11 @@ function jinsite_og_head () {
 		$blog_name = get_bloginfo ( 'name', 'display' );
 		$post_id = $post->ID;
 		if ( has_post_thumbnail ( $post->ID ) ) {
-	    	$og_image = get_the_post_thumbnail_url ( $post_id );
+			$og_image = get_the_post_thumbnail_url ( $post_id );
 		}
 		else {
-            $custom_logo__url = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' ); 
-	    	$og_image =  $custom_logo__url[0]; 
+			$custom_logo__url = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' ); 
+			$og_image =  $custom_logo__url[0]; 
 		}
 		echo '<meta property="og:title" content="' . get_the_title () . '"/>' . PHP_EOL;
 		echo '<meta property="og:type" content="article"/>' . PHP_EOL;
