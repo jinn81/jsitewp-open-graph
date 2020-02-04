@@ -24,7 +24,7 @@ function add_opengraph_doctype ( $output ) {
 add_filter ( 'language_attributes', 'add_opengraph_doctype' );
 function jinsite_og_head () {
 	global $post;
-	if ( ! is_singular () )
+	if ( ! is_singular () ) {
 		return;
 		echo '<meta property="og:title" content="' . get_the_title () . '"/>';
 		echo '<meta property="og:type" content="article"/>';
@@ -39,5 +39,6 @@ function jinsite_og_head () {
 		}
 		echo "";
 	}
+}
 add_action ( 'wp_head', 'jinsite_og_head', 5 );
 ?>
