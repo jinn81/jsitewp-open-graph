@@ -17,10 +17,6 @@
 if ( ! defined ( 'ABSPATH' ) ) {
 	die ( 'Invalid request.' ) ;
 }
-define ( 'JSITEWP_OPEN_GRAPH_URL', plugin_dir_url ( __FILE__ ) );
-function add_thumb () {
-	add_theme_support ( 'post-thumbnails', array( 'post' ) );
-}
 add_action( 'after_setup_theme', 'add_thumb' );
 function add_opengraph_doctype ( $output ) {
 	return $output . ' xmlns:og="https://opengraphprotocol.org/schema/" xmlns:fb="https://www.facebook.com/2008/fbml"';
@@ -28,7 +24,7 @@ function add_opengraph_doctype ( $output ) {
 add_filter ( 'language_attributes', 'add_opengraph_doctype' );
 function jinsite_og_head () {
 	global $post;
-	if ( ! is_singular () )
+	if ( ! is_singular () ){
 		return;
 		$blog_name = get_bloginfo ( 'name', 'display' );
 		$post_id = $post->ID;
@@ -44,6 +40,7 @@ function jinsite_og_head () {
 		echo '<meta property="og:url" content="' . get_permalink () . '"/>' . PHP_EOL;
 		echo '<meta property="og:site_name" content="' . $blog_name . '"/>' . PHP_EOL;
 		echo '<meta property="og:image" content="' . $og_image . '"/>' . PHP_EOL;
+	}
 }
 add_action ( 'wp_head', 'jinsite_og_head', 5 );
-?> 
+?>
